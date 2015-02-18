@@ -193,7 +193,8 @@ def find_angle(point_a, point_b, point_c):
 def normalize_geometry(geometry, make_valid=False, remove_spikes=False,
                        perimeter_threshold=0.90):
     """
-    Normalize geometry type to polygon and fix any invalid geometries
+    By normalize, explode any collections or multipolygons into a list
+    of individual polygons.
     """
 
     new_geom = []
