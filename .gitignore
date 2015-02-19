@@ -1,1 +1,4 @@
 .ropeproject/
+build/
+dist/
+*egg-info
