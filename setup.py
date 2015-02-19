@@ -7,7 +7,7 @@ setup(
     name='makevalid',
     version='0.1.0',
     packages=['makevalid'],
-    install_requires=['shapely>=5.1.0'],
+    install_requires=['shapely>=1.3.0'],
     author='Forrest Williams',
     author_email='forrest.williams@gmail.com',
     url='https://github.com/ftwillms/makevalid',
