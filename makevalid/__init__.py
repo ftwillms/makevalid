@@ -6,6 +6,7 @@ import shapely.speedups
 if shapely.speedups.available:
     shapely.speedups.enable()
 
+from rtree import index
 import math
 
 import logging
@@ -54,17 +55,26 @@ def build_area(noded_lines):
     if len(results) == 1:
         return results[0]
     results.sort(key=lambda x: x.envelope.area, reverse=True)
+    faces_idx = index.Index()
+    faces_idx_count = 0
+    for geom in results:
+        faces_idx.insert(faces_idx_count, geom.bounds)
+        faces_idx_count += 1
     # f1 -> face one
     # f2 -> face two
     for i, f1 in enumerate(results):
         for interior in f1.interiors:
-            for j, f2 in enumerate(results, i+1):
+            for j in faces_idx.intersection(interior.bounds):
+                if j == i:
+                    continue
+                f2 = results[j]
                 if hasattr(f2, 'parent'):
                     continue
                 else:
                     f2_exterior = f2.exterior
-                    if f2_exterior.equals(interior):
+                    if len(f2_exterior.coords) == len(interior.coords) and f2_exterior.equals(interior):
                         f2.parent = f1
+                        break
 
     # Only return the faces with "even ancestors"
     out_results = []
