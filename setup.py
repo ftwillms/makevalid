@@ -5,13 +5,13 @@ from setuptools import setup
 
 setup(
     name='makevalid',
-    version='0.1.0',
+    version='0.1.1',
     packages=['makevalid'],
-    install_requires=['shapely>=1.3.0'],
+    install_requires=['shapely>=1.3.0', 'rtree>=0.7.0'],
     author='Forrest Williams',
     author_email='forrest.williams@gmail.com',
     url='https://github.com/ftwillms/makevalid',
-    description='Using the Shapely module, function to make a geometry valid.',
+    description='Using the Shapely module, function to make a polygon valid.',
     license='BSD',
     classifiers=[
         'Development Status :: 4 - Beta',
