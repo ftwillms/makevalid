@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/ftwillms/makevalid.png?label=ready&title=Ready)](https://waffle.io/ftwillms/makevalid)
 makevalid
 =========
 
