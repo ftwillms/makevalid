@@ -4,7 +4,7 @@ import logging
 import sys
 logging.basicConfig(level=logging.DEBUG, stream=sys.stderr)
 
-from .. import makevalid
+import makevalid
 
 
 class ValidityTestCases(unittest.TestCase):
@@ -97,3 +97,6 @@ class ValidityTestCases(unittest.TestCase):
         output_results.append({'properties': {'name': 'nested_shells'}, 'geometry': mapping(validated_poly)})
 
         # TODO: Write out the output results if you like?
+
+if __name__ == '__main__':
+        unittest.main()
