@@ -13,3 +13,6 @@ python setup.py install
 ```bash
 python tests/test_validity.py
 ```
+
+### Sample Usage
+Refer to tests/test_validity.py for sample usage.
