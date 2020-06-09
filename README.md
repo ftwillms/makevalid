@@ -1,3 +1,4 @@
+**Deprecated: GEOS added native support for MakeValid and Shapely v1.8.0 now includes this https://github.com/Toblerity/Shapely/pull/895** 
 
 makevalid
 =========
